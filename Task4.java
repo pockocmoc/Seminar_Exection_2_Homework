@@ -19,13 +19,17 @@ public class Task4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите строку: ");
-        String input = scanner.nextLine();
-        boolean notNull = isNotBlank(input);
-        if (!notNull) {
-            System.out.println("Нельзя вводить пустые строки или строки, состоящие только из пробелов!");
-            return;
-        }
+        String input;
+        boolean notNull;
+
+        do {
+            System.out.print("Введите строку: ");
+            input = scanner.nextLine();
+            notNull = isNotBlank(input);
+            if (!notNull) {
+                System.out.println("Нельзя вводить пустые строки или строки, состоящие только из пробелов!");
+            }
+        } while (!notNull);
 
         System.out.println("Вы ввели: " + input);
     }

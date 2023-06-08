@@ -22,15 +22,16 @@ public class Task1 {
         float result = 0;
         boolean validInput = false;
         do {
-            try {
-                System.out.print("Введите дробное число: ");
-                String input = scanner.nextLine();
+            System.out.print("Введите дробное число: ");
+            String input = scanner.nextLine();
+            if (input.matches("^[-+]?\\d*\\.,?\\d+$")) {
                 result = Float.parseFloat(input);
                 validInput = true;
-            } catch (NumberFormatException e) {
+            } else {
                 System.out.println("Неверный формат ввода! Попробуйте еще раз.");
             }
         } while (!validInput);
         return result;
     }
+
 }
